@@ -7,13 +7,10 @@ const Container = styled.div`
 
 function useFocusFirstEmptyInput ({ containerRef, query = 'input' }) {
   useLayoutEffect(() => {
-    console.log('a one')
     if (containerRef && containerRef.current) {
-      console.log('a tow')
       const inputs = [...containerRef.current.querySelectorAll(query)]
       const firstEmptyElement = inputs.find((element) => !element.value && !element.disabled ? element : false)
       if (firstEmptyElement && firstEmptyElement.focus) {
-        console.log('a three')
         firstEmptyElement.focus()
       }
     }
